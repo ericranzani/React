@@ -147,7 +147,7 @@ const precosFiltro = precos.filter((preco) => preco.includes("R$"));
 // Retorna uma nova array, modificada com o
 // retorno de cada item da função
 const precoNumeros = precosFiltro.map((preco) =>
-  Number(preco.replace("R$ ", ""))
+  Number(preco.replace("R$ ", "")),
 );
 
 //Expressões
