@@ -4,9 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "esbuild --bundle src/main.jsx --outfile=main.js --servedir=./ --watch",
+    "build": "esbuild --bundle src/main.jsx --outfile=main.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.20.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
