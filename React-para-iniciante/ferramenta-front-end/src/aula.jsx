@@ -1,6 +1,6 @@
 import React from "react";
 
-const App = () => {
+const Aula = () => {
   const numero = Math.random();
   const ativo = true;
 
@@ -34,4 +34,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Aula;

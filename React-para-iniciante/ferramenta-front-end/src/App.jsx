@@ -1,7 +1,5 @@
-// Mostre os dados da aplicação, como aprensetado no vídeo
-// Não utilize CSS externo, use o style para mudar as cores
-// Se a situação estiver ativa pinte de verde, inativa vermelho
-// Se o gasto for maior que 10000 mostre uma mensagem
+import React from "react";
+
 const luana = {
   cliente: "Luana",
   idade: 27,
@@ -26,7 +24,26 @@ const mario = {
 };
 
 const App = () => {
-  const dados = luana;
+  const dados = mario;
 
-  return <div></div>;
+  const total = dados.compras
+    .map((item) => Number(item.preco.replace("R$ ", "")))
+    .reduce((a, b) => a + b);
+
+  return (
+    <>
+      <p>Nome: {dados.cliente}</p>
+      <p>Idade: {dados.idade}</p>
+      <p>
+        Situação:{" "}
+        <span style={dados.ativa ? { color: "green" } : { color: "red" }}>
+          {dados.ativa ? "Ativa" : "Inativa"}
+        </span>
+      </p>
+      <p>Total Gasto R${total}</p>
+      {total > 10000 && <p>Você está gastando muito.</p>}
+    </>
+  );
 };
+
+export default App;
