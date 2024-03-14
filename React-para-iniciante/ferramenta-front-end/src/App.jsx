@@ -1,37 +1,32 @@
-import React from "react";
-
-const App = () => {
-  const numero = Math.random();
-  const ativo = true;
-
-  function mostrarNome(sobrenome) {
-    return "Eric " + sobrenome;
-  }
-
-  const carro = {
-    marca: "Ford",
-    rodas: 4,
-  };
-
-  const estiloH1 = {
-    color: "blue",
-    fontSize: "20px",
-    fontFamily: "Helvetica",
-  };
-
-  const titulo = <h1 style={estiloH1}>Esse é um titulo</h1>;
-
-  return (
-    <>
-      {titulo}
-      {mostrarNome("Ranzani")}
-      <p>{new Date().getFullYear()}</p>
-      <p style={{ color: "green" }}>
-        {carro.marca} que tem {carro.rodas} rodas
-      </p>
-      <p className={ativo ? "ativo" : "inativo"}>{numero * 100}</p>
-    </>
-  );
+// Mostre os dados da aplicação, como aprensetado no vídeo
+// Não utilize CSS externo, use o style para mudar as cores
+// Se a situação estiver ativa pinte de verde, inativa vermelho
+// Se o gasto for maior que 10000 mostre uma mensagem
+const luana = {
+  cliente: "Luana",
+  idade: 27,
+  compras: [
+    { nome: "Notebook", preco: "R$ 2500" },
+    { nome: "Geladeira", preco: "R$ 3000" },
+    { nome: "Smartphone", preco: "R$ 1500" },
+  ],
+  ativa: true,
 };
 
-export default App;
+const mario = {
+  cliente: "Mario",
+  idade: 31,
+  compras: [
+    { nome: "Notebook", preco: "R$ 2500" },
+    { nome: "Geladeira", preco: "R$ 3000" },
+    { nome: "Smartphone", preco: "R$ 1500" },
+    { nome: "Guitarra", preco: "R$ 3500" },
+  ],
+  ativa: false,
+};
+
+const App = () => {
+  const dados = luana;
+
+  return <div></div>;
+};
