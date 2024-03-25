@@ -1,5 +1,7 @@
+import React from "react";
 // Organize os produtos como mostrado no vídeo
 // Mostre apenas produtos que forem mais caros que R$ 1500
+
 const produtos = [
   {
     id: 1,
@@ -22,5 +24,25 @@ const produtos = [
 ];
 
 const App = () => {
-  return <section></section>;
+  return (
+    <section>
+      {produtos
+        .filter((produto) => Number(produto.preco.replace("R$ ", " ")) > 1500)
+        .map((produto) => (
+          <div key={produto.id}>
+            <h1>{produto.nome}</h1>
+            <p>Preço: {produto.preco}</p>
+            <ul>
+              {produto.cores.map((cor) => (
+                <li key={cor} style={{ background: cor, color: "white" }}>
+                  {cor}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+    </section>
+  );
 };
+
+export default App;
