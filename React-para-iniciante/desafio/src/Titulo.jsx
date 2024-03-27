@@ -1,6 +1,6 @@
 import React from "react";
 
-const Home = () => {
+const Titulo = () => {
   return (
     <div>
       <h1 style={{ color: "green" }}>Home</h1>
@@ -9,4 +9,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Titulo;
