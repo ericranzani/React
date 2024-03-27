@@ -1,4 +1,6 @@
 import React from "react";
+import Titulo from "./Titulo";
+
 // Replique a interface como a apresentada na aula
 // Utilize a array abaixo para mostrar os produtos
 // Quebre em componentes o que precisar ser reutilizado
@@ -12,12 +14,13 @@ const Produtos = () => {
 
   return (
     <section>
+      <Titulo texto="Produtos" />
       {produtos.map((produto) => (
         <div style={{ border: "1px solid", margin: "1rem 0", padding: "1rem" }}>
           <p>{produto.nome}</p>
           <ul>
             {produto.propriedades.map((propriedade) => (
-              <li key={produto.propriedade}>{propriedade}</li>
+              <li key={propriedade}>{propriedade}</li>
             ))}
           </ul>
         </div>

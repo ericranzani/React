@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import Titulo from "./Titulo";
+import Home from "./Home";
 import Produtos from "./Produtos";
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
   if (pathname === "/produtos") {
     Component = Produtos;
   } else {
-    Component = Titulo;
+    Component = Home;
   }
 
   return (
