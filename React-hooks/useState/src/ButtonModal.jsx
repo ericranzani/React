@@ -1,7 +1,12 @@
 import React from "react";
-
+//aula 1
 const ButtonModal = ({ setModal }) => {
-  return <button onClick={() => setModal(true)}>Abrir</button>;
+  function handleClick() {
+    // usando um callback
+    setModal((ativo) => !ativo);
+  }
+
+  return <button onClick={handleClick}>Abrir</button>;
 };
 
 export default ButtonModal;
