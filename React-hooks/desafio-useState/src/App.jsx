@@ -23,7 +23,7 @@ const App = () => {
       <button style={{ margin: ".5rem" }} onClick={handleClick}>
         Notebook
       </button>
-      <Produto dados={dados} />
+      {dados && <Produto dados={dados} />}
     </>
   );
 };
