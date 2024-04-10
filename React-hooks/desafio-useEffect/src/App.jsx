@@ -8,27 +8,35 @@ import Produto from "./Produto";
 // Quando o usuário entrar no site, se existe um produto no localStorage, faça o fetch do mesmo
 
 const App = () => {
-  const [dados, setDados] = React.useState(null);
+  const [produto, setProduto] = React.useState(null);
 
-  async function handleClick(event) {
-    const response = await fetch(
-      `https://ranekapi.origamid.dev/json/api/produto/${event.target.innerText}`,
-    );
-    const json = await response.json();
-    setDados(json);
+  // efeito de trazer o produto do localStorage
+  // assim, ao atualizar, em preferências já vai estar o produto que foi desejado
+  React.useEffect(() => {
+    const produtoLocal = window.localStorage.getItem("produto");
+    if (produtoLocal !== null) setProduto(produtoLocal);
+  }, []);
+
+  // salvando no localStorage o estado conforme o efeito selecionado pelo botão
+  React.useEffect(() => {
+    if (produto !== null) window.localStorage.setItem("produto", produto);
+  }, [produto]);
+
+  // setando o nome do produto no estado assim que interagir com o botão
+  function handleClick({ target }) {
+    setProduto(target.innerText);
   }
 
   return (
-    <div>
-      <h1>Preferências:</h1>
-      <button style={{ margin: "0.5rem" }} onClick={handleClick}>
+    <>
+      <h1>Preferências: {produto}</h1>
+      <button style={{ marginRight: "0.5rem" }} onClick={handleClick}>
         notebook
       </button>
-      <button style={{ margin: "0.5rem" }} onClick={handleClick}>
+      <button style={{ marginRight: "0.5rem" }} onClick={handleClick}>
         smartphone
       </button>
-      <Produto dados={dados} />
-    </div>
+    </>
   );
 };
 
