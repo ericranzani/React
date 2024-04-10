@@ -36,6 +36,7 @@ const App = () => {
       <button style={{ marginRight: "0.5rem" }} onClick={handleClick}>
         smartphone
       </button>
+      <Produto produto={produto} />
     </>
   );
 };
