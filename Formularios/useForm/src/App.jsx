@@ -7,7 +7,7 @@ import useForm from "./Hooks/useForm";
 
 const App = () => {
   const nome = useForm("");
-  const sobrenome = useForm(false); // passado como false para nao entrar na verificação de campo
+  const sobrenome = useForm(false); // passado como false para nao entrar na validação de campo
   const email = useForm("email");
   const cep = useForm("cep");
   const [produto, setProduto] = React.useState("");
