@@ -1,19 +1,18 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import Sobre from "./Sobre";
-import Header from "./Header";
-
+import React from 'react';
+const Contato = React.lazy(() => import('./Contato'));
 
 const App = () => {
+  const [ativar, setAtivar] = React.useState(false);
+
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="sobre" element={<Sobre />} />
-      </Routes>
-    </BrowserRouter>
+    <div>
+      {ativar && (
+        <React.Suspense fallback={<div>Carregando...</div>}>
+          <Contato />
+        </React.Suspense>
+      )}
+      <button onClick={() => setAtivar(true)}>Ativar</button>
+    </div>
   );
 };
 
